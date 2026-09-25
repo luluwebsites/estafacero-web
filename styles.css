@@ -41,15 +41,13 @@ header.site{
   padding:20px 0;
   border-bottom:1px solid var(--line);
 }
-/* Layout via display:table instead of flexbox: renders identically in every
-   modern browser, but also holds up in old/embedded rendering engines
-   (in-app browsers, old WebViews, PDF/preview tools) that handle flexbox poorly. */
 header.site .wrap-wide{display:table;width:100%;table-layout:fixed}
 .brand,
 nav.site-nav{display:table-cell;vertical-align:middle}
 .brand{width:1%;white-space:nowrap;text-decoration:none;color:var(--teal-deep);font-family:"Fraunces",serif;font-weight:600;font-size:1.3rem}
 .brand svg,
-.brand img{width:30px;height:auto;vertical-align:middle;margin-right:8px}
+.brand-icon{width:30px;height:auto;vertical-align:middle;margin-right:8px}
+.brand-text{height:24px;width:auto;vertical-align:middle}
 nav.site-nav{text-align:right}
 nav.site-nav a{
   margin-left:22px;
@@ -73,7 +71,7 @@ nav.site-nav a:hover{color:var(--teal-deep)}
 .hero p.lead{font-size:1.2rem;max-width:42ch}
 .hero-shield{text-align:center}
 .hero-shield svg,
-.hero-shield img{width:280px;max-width:100%;height:auto}
+.hero-shield img{width:400px;max-width:100%;height:auto}
 
 .btn{
   display:inline-flex;
@@ -176,6 +174,6 @@ footer.site .foot-links a{margin-right:16px}
   .hero .wrap-wide > div{display:block;width:auto;padding-right:0}
   .hero .wrap-wide > div:first-child{margin-top:20px}
   .hero-shield svg,
-  .hero-shield img{width:180px}
+  .hero-shield img{width:260px}
   .btn{white-space:nowrap}
 }
