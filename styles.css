@@ -1,0 +1,181 @@
+:root{
+  --bg:#F7FAF9;
+  --ink:#173832;
+  --teal-deep:#1F6B62;
+  --teal:#2C8C82;
+  --teal-light:#6FC3B7;
+  --teal-pale:#E4F3F0;
+  --white:#FFFFFF;
+  --caution:#B8752E;
+  --caution-bg:#FBF1E5;
+  --line:#D8E7E4;
+  --radius:14px;
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+  font-size:19px;
+  line-height:1.6;
+}
+h1,h2,h3{
+  font-family:"Fraunces", Georgia, serif;
+  font-weight:600;
+  line-height:1.15;
+  color:var(--teal-deep);
+  margin:0 0 .5em;
+}
+h1{font-size:2.6rem}
+h2{font-size:1.7rem}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+a{color:var(--teal-deep)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:960px;margin:0 auto;padding:0 24px}
+
+header.site{
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+/* Layout via display:table instead of flexbox: renders identically in every
+   modern browser, but also holds up in old/embedded rendering engines
+   (in-app browsers, old WebViews, PDF/preview tools) that handle flexbox poorly. */
+header.site .wrap-wide{display:table;width:100%;table-layout:fixed}
+.brand,
+nav.site-nav{display:table-cell;vertical-align:middle}
+.brand{width:1%;white-space:nowrap;text-decoration:none;color:var(--teal-deep);font-family:"Fraunces",serif;font-weight:600;font-size:1.3rem}
+.brand svg,
+.brand img{width:30px;height:auto;vertical-align:middle;margin-right:8px}
+nav.site-nav{text-align:right}
+nav.site-nav a{
+  margin-left:22px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:0.98rem;
+}
+nav.site-nav a:hover{color:var(--teal-deep)}
+@media (max-width:520px){
+  header.site .wrap-wide{display:block}
+  .brand,nav.site-nav{display:block;width:auto}
+  nav.site-nav{text-align:left;margin-top:8px}
+  nav.site-nav a{margin-left:0;margin-right:18px}
+}
+
+.hero{padding:56px 0 40px}
+.hero .wrap-wide{display:table;width:100%;table-layout:fixed}
+.hero .wrap-wide > div{display:table-cell;vertical-align:middle}
+.hero .wrap-wide > div:first-child{width:58%;padding-right:48px}
+.hero h1{max-width:16ch}
+.hero p.lead{font-size:1.2rem;max-width:42ch}
+.hero-shield{text-align:center}
+.hero-shield svg,
+.hero-shield img{width:280px;max-width:100%;height:auto}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--teal-deep);
+  color:var(--white);
+  text-decoration:none;
+  padding:16px 28px;
+  border-radius:999px;
+  font-size:1.15rem;
+  font-weight:700;
+  box-shadow:0 3px 0 rgba(23,56,50,.15);
+}
+.btn:hover{background:var(--teal)}
+.btn svg{width:22px;height:22px}
+.btn-secondary{
+  background:transparent;
+  color:var(--teal-deep);
+  border:2px solid var(--teal-deep);
+  box-shadow:none;
+}
+
+.promise{
+  background:var(--teal-pale);
+  border-radius:var(--radius);
+  padding:32px;
+  margin:48px 0;
+}
+.promise h2{margin-bottom:.3em}
+.promise ul{margin:16px 0 0;padding-left:0;list-style:none}
+.promise li{
+  padding-left:34px;
+  position:relative;
+  margin-bottom:10px;
+}
+.promise li::before{
+  content:"";
+  position:absolute;left:0;top:.35em;
+  width:20px;height:20px;
+  background:var(--teal-deep);
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
+}
+
+.steps{margin:56px 0}
+.step{
+  display:table;width:100%;table-layout:fixed;
+  padding:20px 0;
+  border-top:1px solid var(--line);
+}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step > div{display:table-cell;vertical-align:top}
+.step .num{
+  width:44px;
+  font-family:"Fraunces",serif;
+  font-size:1.4rem;
+  color:var(--teal-light);
+  font-weight:600;
+}
+
+.caution-box{
+  background:var(--caution-bg);
+  border-left:4px solid var(--caution);
+  border-radius:8px;
+  padding:20px 24px;
+  margin:32px 0;
+}
+.caution-box strong{color:var(--caution)}
+
+.guides{margin:56px 0}
+.guide-card{
+  display:block;
+  text-decoration:none;
+  color:var(--ink);
+  padding:20px 0;
+  border-top:1px solid var(--line);
+}
+.guide-card:last-child{border-bottom:1px solid var(--line)}
+.guide-card h3{color:var(--teal-deep);margin-bottom:.2em}
+.guide-card span{color:var(--teal);font-size:.95rem}
+
+article img{width:100%;max-width:480px;display:block;height:auto;margin:28px auto}
+
+footer.site{
+  margin-top:64px;
+  padding:32px 0 48px;
+  border-top:1px solid var(--line);
+  font-size:.92rem;
+  color:#4B6A64;
+}
+footer.site a{color:#4B6A64}
+footer.site .foot-links{margin-top:10px}
+footer.site .foot-links a{margin-right:16px}
+
+@media (max-width:760px){
+  body{font-size:18px}
+  h1{font-size:2.1rem}
+  .hero .wrap-wide{display:block}
+  .hero .wrap-wide > div{display:block;width:auto;padding-right:0}
+  .hero .wrap-wide > div:first-child{margin-top:20px}
+  .hero-shield svg,
+  .hero-shield img{width:180px}
+  .btn{white-space:nowrap}
+}
